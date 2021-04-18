@@ -38,7 +38,7 @@ services:
       INSTANCE_NAME: 'hermes <ENTER_YOUR_ADDRESS_HERE>'
 
   worker: &hermes-props
-    image: ambrosus/ambrosus-node:<ENTER_DOCKER_TAG_HERE>
+    image: darshankumar89/unova-ambrosus-node-atlas:development
     container_name: hermes_worker
     command: sh -c 'yarn migrate && yarn start:hermes'
     restart: unless-stopped
@@ -69,7 +69,7 @@ services:
       - EMAIL_TMPL_ID_ORGREQ_REFUSE=<ENTER_YOUR_EMAIL_TMPL_ID_ORGREQ_REFUSE>
 
   server:
-    image: quay.io/ambrosus/ambrosus-node-extended
+    image: darshankumar89/unova-amb-hermes:v0.1.12 
     container_name: hermes_server
     <<: *hermes-props
     command: yarn start:server

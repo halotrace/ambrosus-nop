@@ -38,7 +38,7 @@ services:
       INSTANCE_NAME: 'atlas <ENTER_YOUR_ADDRESS_HERE>'
 
   worker: &atlas-props
-    image: ambrosus/ambrosus-node:<ENTER_DOCKER_TAG_HERE>
+    image: darshankumar89/unova-ambrosus-node-atlas:development
     container_name: atlas_worker
     command: sh -c 'yarn migrate && yarn start:atlas'
     restart: unless-stopped
